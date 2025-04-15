@@ -1,0 +1,58 @@
+/* style-print.css */
+
+* {
+    background: none !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+body {
+    font-family: "Century Gothic", sans-serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+    margin: 2cm;
+}
+
+/* Masquer les éléments inutiles */
+header,
+footer,
+nav,
+.menu,
+.sidebar,
+.btn,
+button,
+form,
+#logo,
+#section-client,
+#section-logo {
+    display: none !important;
+}
+
+/* Réduire les images inutiles */
+img {
+    display: none;
+}
+
+/* Garder seulement les images utiles au contenu (si besoin) */
+.content img.essential {
+    display: block;
+}
+
+/* Ajuster la mise en page */
+main {
+    display: block;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    page-break-after: avoid;
+    color: #000;
+}
+
+a::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+}
