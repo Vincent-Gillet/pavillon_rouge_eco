@@ -1,58 +1,60 @@
-/* style-print.css */
-
-* {
-    background: none !important;
-    color: black !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-}
-
 body {
     font-family: "Century Gothic", sans-serif;
-    font-size: 12pt;
-    line-height: 1.5;
-    color: #000;
-    background: #fff;
-    margin: 2cm;
+    background: none;
+    color: black;
 }
 
-/* Masquer les éléments inutiles */
-header,
-footer,
-nav,
-.menu,
-.sidebar,
-.btn,
-button,
-form,
-#logo,
-#section-client,
-#section-logo {
+/* Cacher les éléments non nécessaires à l'impression */
+header, footer, nav, .sidebar, .btn, #logo, #div-background, #section-logo, #section-client, .div-content-red {
     display: none !important;
 }
 
-/* Réduire les images inutiles */
+/* Cacher toutes les images sauf celles avec une classe spécifique pour le contenu */
 img {
-    display: none;
+    display: none !important;
 }
 
-/* Garder seulement les images utiles au contenu (si besoin) */
-.content img.essential {
-    display: block;
+/* Afficher uniquement les images de contenu (ajoute une classe "print-content" à celles-ci) */
+.print-content {
+    display: block !important;
 }
 
-/* Ajuster la mise en page */
-main {
-    display: block;
+/* Cacher les éléments de navigation */
+.menu, .nav, .pagination, .totem-img {
+    display: none !important;
+}
+
+/* Adaptation du contenu principal */
+main, #div_text_panda {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+/* Réduire les marges des sections */
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+/* Formulaires plus compacts */
+form {
     width: 100%;
+    margin: 0;
 }
 
-h1, h2, h3 {
-    page-break-after: avoid;
-    color: #000;
+form p {
+    text-align: left;
+    font-size: 14px;
 }
 
-a::after {
-    content: " (" attr(href) ")";
-    font-size: 10pt;
+/* Boîtes */
+.box-red, .box-red::before, .box-red::after {
+    display: none !important;
+}
+
+/* Titre spécifique de section */
+h2 {
+    background: none;
+    font-size: 20px;
 }
